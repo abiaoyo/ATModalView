@@ -22,6 +22,8 @@ typedef void (^ATModalPopCustomConfigBlock)(ATModalCustomPopView * customPopView
 @property (nonatomic,copy) ATModalPopCustomConfigBlock showLayoutBlock;
 @property (nonatomic,copy) ATModalPopCustomConfigBlock hideLayoutBlock;
 @property (nonatomic,copy) ATModalBlock willShowBlock;
+@property (nonatomic,copy) ATModalBlock didShowBlock;
+@property (nonatomic,copy) ATModalBlock willDismissBlock;
 @property (nonatomic,copy) ATModalBlock didDismissBlock;
 @end
 
@@ -32,6 +34,8 @@ typedef void (^ATModalPopCustomConfigBlock)(ATModalCustomPopView * customPopView
 - (void)customViewShowLayout:(ATModalCustomPopView *)customPopView config:(ATModalCustomPopViewConfig *)config;
 - (void)customViewHideLayout:(ATModalCustomPopView *)customPopView config:(ATModalCustomPopViewConfig *)config;
 - (void)customViewWillShow:(ATModalCustomPopView *)customPopView;
+- (void)customViewDidShow:(ATModalCustomPopView *)customPopView;
+- (void)customViewWillDismiss:(ATModalCustomPopView *)customPopView;
 - (void)customViewDidDismiss:(ATModalCustomPopView *)customPopView;
 @end
 

@@ -78,11 +78,32 @@
     if([customView respondsToSelector:@selector(customViewWillShow:)]){
         [customView customViewWillShow:self];
     }
-    [super show:completion];
+    ATModalCustomPopView * customPopView = self;
+    void (^onDidShowBlock)(void) = ^{
+        if([customView respondsToSelector:@selector(customViewDidShow:)]){
+            [customView customViewDidShow:customPopView];
+        }
+    };
+    ATModalCustomPopViewConfig * config = (ATModalCustomPopViewConfig *)self.config;
+    if(config.willShowBlock){
+        config.willShowBlock();
+    }
+    [super show:^(){
+        if(completion){
+            completion();
+        }
+        if(config.didShowBlock){
+            config.didShowBlock();
+        }
+        onDidShowBlock();
+    }];
 }
 
 - (void)dismiss:(ATModalBlock)completion{
     UIView<ATModalCustomViewProtocol> * customView = self.customView;
+    if([customView respondsToSelector:@selector(customViewWillDismiss:)]){
+        [customView customViewWillDismiss:self];
+    }
     ATModalCustomPopView * customPopView = self;
     void (^onDidDismissBlock)(void) = ^{
         if([customView respondsToSelector:@selector(customViewDidDismiss:)]){
@@ -91,7 +112,9 @@
     };
     
     ATModalCustomPopViewConfig * config = (ATModalCustomPopViewConfig *)self.config;
-    
+    if(config.willDismissBlock){
+        config.willDismissBlock();
+    }
     [super dismiss:^(){
         if(completion){
             completion();
