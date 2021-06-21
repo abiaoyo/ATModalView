@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'ATModalView'
-  s.version          = '1.0'
+  s.version          = '1.1'
   s.summary          = 'iOS 模态视图，可在此基础上自定义适合业务的action，alert及其他弹窗'
 
   s.description      = <<-DESC
