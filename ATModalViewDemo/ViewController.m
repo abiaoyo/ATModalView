@@ -9,6 +9,7 @@
 #import "TestCustomViewController.h"
 #import "TestCustomAlertView.h"
 #import "TestCustomAlertView2.h"
+#import "CustomAlertView.h"
 
 @interface ViewController ()
 
@@ -34,5 +35,19 @@
     [TestCustomAlertView2 showInView:self.view];
 }
 
+- (IBAction)clickDefaultAlert:(id)sender {
+    
+    [CustomAlertView showAlertInView:self.view configBlock:^(CustomAlertViewConfig * _Nonnull config) {
+        config.title = [config defaultTitleAttributed:@"标题"];
+        config.message = [config defaultMessageAttributed:@"消息内容"];
+        config.items = @[[config defaultItemAttributed:@"取消"],[config defaultItemAttributed:@"确定"]];
+        config.itemBackgroundColors = @[[UIColor colorWithRed:1 green:0 blue:0 alpha:0.35],[UIColor colorWithRed:0.3 green:0.8 blue:0 alpha:0.35]];
+        config.onClickItemBlock = ^(NSUInteger index, BOOL * _Nonnull canDismiss) {
+            if(index == 1){
+                *canDismiss = NO;
+            }
+        };
+    }];
+}
 
 @end

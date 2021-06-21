@@ -20,6 +20,7 @@
 		18856AD726802B8B001677A1 /* TestCustomActionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18856AD426802B8B001677A1 /* TestCustomActionView.m */; };
 		18856ADF26803699001677A1 /* TestCustomAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18856ADE26803699001677A1 /* TestCustomAlertView.m */; };
 		18856AE4268038DC001677A1 /* TestCustomAlertView2.m in Sources */ = {isa = PBXBuildFile; fileRef = 18856AE3268038DC001677A1 /* TestCustomAlertView2.m */; };
+		18856EA426805ED8001677A1 /* CustomAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18856EA326805ED8001677A1 /* CustomAlertView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +48,8 @@
 		18856ADE26803699001677A1 /* TestCustomAlertView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestCustomAlertView.m; sourceTree = "<group>"; };
 		18856AE2268038DC001677A1 /* TestCustomAlertView2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestCustomAlertView2.h; sourceTree = "<group>"; };
 		18856AE3268038DC001677A1 /* TestCustomAlertView2.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestCustomAlertView2.m; sourceTree = "<group>"; };
+		18856EA226805ED8001677A1 /* CustomAlertView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomAlertView.h; sourceTree = "<group>"; };
+		18856EA326805ED8001677A1 /* CustomAlertView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomAlertView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +83,7 @@
 		18856AAB26802427001677A1 /* ATModalViewDemo */ = {
 			isa = PBXGroup;
 			children = (
+				18856EA126805EBC001677A1 /* Custom */,
 				18856ADC26803682001677A1 /* Demo2 */,
 				18856AD126802B81001677A1 /* Demo1 */,
 				18856AAC26802427001677A1 /* AppDelegate.h */,
@@ -128,6 +132,15 @@
 				18856AE3268038DC001677A1 /* TestCustomAlertView2.m */,
 			);
 			path = Demo2;
+			sourceTree = "<group>";
+		};
+		18856EA126805EBC001677A1 /* Custom */ = {
+			isa = PBXGroup;
+			children = (
+				18856EA226805ED8001677A1 /* CustomAlertView.h */,
+				18856EA326805ED8001677A1 /* CustomAlertView.m */,
+			);
+			path = Custom;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -199,6 +212,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18856EA426805ED8001677A1 /* CustomAlertView.m in Sources */,
 				18856ACF2680247B001677A1 /* ATModalView.m in Sources */,
 				18856AB426802427001677A1 /* ViewController.m in Sources */,
 				18856AD626802B8B001677A1 /* TestCustomViewController.m in Sources */,

@@ -40,6 +40,14 @@
                                     <action selector="clickAlertChangeFrame:" destination="BYZ-38-t0r" eventType="touchUpInside" id="J0r-lS-qXz"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hUE-jl-BwI">
+                                <rect key="frame" x="23" y="309" width="169" height="41"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="CustomAlert"/>
+                                <connections>
+                                    <action selector="clickDefaultAlert:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NAn-Oa-npM"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
