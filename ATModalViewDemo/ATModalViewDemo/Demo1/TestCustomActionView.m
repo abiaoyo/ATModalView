@@ -10,7 +10,7 @@
 
 
 @interface TestCustomActionView()
-@property (nonatomic,strong) ATModalCustomPopView * customPopView;
+@property (nonatomic,weak) ATModalCustomPopView * customPopView;
 @end
 
 @implementation TestCustomActionView

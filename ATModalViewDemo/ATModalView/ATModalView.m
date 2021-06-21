@@ -117,26 +117,28 @@
 }
 
 - (void)show:(ATModalBlock)completion{
+    __weak typeof(self) weakSelf = self;
     dispatch_async(dispatch_get_main_queue(), ^{
         [self viewShowAnimationBlock:^{
-            self.modalView.alpha = 1;
-            [self layoutForShowAnimation];
-            [self layoutIfNeeded];
+            weakSelf.modalView.alpha = 1;
+            [weakSelf layoutForShowAnimation];
+            [weakSelf layoutIfNeeded];
         } completion:completion];
     });
 }
 - (void)dismiss:(ATModalBlock)completion{
+    __weak typeof(self) weakSelf = self;
     dispatch_async(dispatch_get_main_queue(), ^{
         [self viewHideAnimationBlock:^{
-                    self.modalView.alpha = 0;
-                    [self layoutForHideAnimation];
-                    [self layoutIfNeeded];
-                } completion:^{
-                    [self removeFromSuperview];
-                    if(completion){
-                        completion();
-                    }
-                }];
+            weakSelf.modalView.alpha = 0;
+            [weakSelf layoutForHideAnimation];
+            [weakSelf layoutIfNeeded];
+        } completion:^{
+            [weakSelf removeFromSuperview];
+            if(completion){
+                completion();
+            }
+        }];
     });
 }
 

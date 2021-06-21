@@ -8,7 +8,7 @@
 #import "TestCustomAlertView.h"
 
 @interface TestCustomAlertView()
-@property (nonatomic,strong) ATModalCustomPopView * customPopView;
+@property (nonatomic,weak) ATModalCustomPopView * customPopView;
 @end
 
 @implementation TestCustomAlertView

@@ -13,8 +13,6 @@
 
 @end
 
-
-
 @interface ATModalCustomPopView()
 @property (nonatomic,strong) UIView<ATModalCustomViewProtocol> * customView;
 @end
